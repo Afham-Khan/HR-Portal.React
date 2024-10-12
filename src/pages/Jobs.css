@@ -1,0 +1,138 @@
+/* .jobs {
+    padding: 20px;
+  }
+  
+  .jobs-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .jobs-title {
+    font-size: 2rem;
+    color: #2c3e50;
+  }
+  
+  .jobs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .job-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
+  }
+  
+  .job-title {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+  
+  .job-details {
+    color: #7f8c8d;
+    margin-bottom: 10px;
+  }
+  
+  .job-type {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #3498db;
+    color: white;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+  }
+  
+  .job-applicants {
+    color: #7f8c8d;
+    margin-bottom: 15px;
+  }
+  
+  .job-actions {
+    display: flex;
+    justify-content: space-between;
+  } */
+
+ 
+  /* Jobs.css */
+
+ /* Jobs.css */
+
+.jobs-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.jobs-page h1 {
+  text-align: center;
+  color: #333;
+}
+
+.jobs-page h2 {
+  margin-top: 20px;
+  color: #555;
+}
+
+.jobs-page button {
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.jobs-page button:hover {
+  background-color: #0056b3;
+}
+
+.job-listings {
+  margin-top: 20px;
+}
+
+.job-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.job-card h3 {
+  margin: 0;
+  color: #333;
+}
+
+.job-card p {
+  margin: 5px 0;
+}
+
+.job-card button {
+  background-color: #0072ff; /* Green for Apply button */
+}
+
+.job-card button:hover {
+  background-color: #0072ff;
+}
+
+/* Additional styles for the Apply button */
+.job-card button:last-child {
+  background-color: #0072ff; /* Teal for Apply button */
+}
+
+.job-card button:last-child:hover {
+  background-color: #0072ff; /* Darker teal on hover */
+}

@@ -1,0 +1,142 @@
+/*   
+.postjob-form {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .postjob-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .postjob-form div {
+    margin-bottom: 15px;
+  }
+  
+  .postjob-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  .postjob-form input,
+  .postjob-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #fff;
+  }
+  
+  .postjob-form input:focus,
+  .postjob-form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .postjob-form textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .postjob-form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .postjob-form button:hover {
+    background-color: #0056b3;
+  }
+   */
+
+
+
+/* Container for the post job form */
+.postjob-form {
+  background-color: #f9f9f9; /* Light gray background */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Padding inside the form */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin: 20px 0; /* Space above and below the form */
+}
+
+/* Heading style for the form */
+.postjob-form h2 {
+  font-size: 24px; /* Font size for form title */
+  color: #333; /* Dark gray color */
+  margin-bottom: 20px; /* Space below the title */
+}
+
+/* Style for form labels */
+.postjob-form label {
+  display: block; /* Labels on their own lines */
+  font-weight: bold; /* Bold font for labels */
+  margin-bottom: 5px; /* Space below labels */
+  color: #555; /* Medium gray color for labels */
+}
+
+/* Style for input fields */
+.postjob-form input[type="text"],
+.postjob-form input[type="number"],
+.postjob-form textarea {
+  width: 100%; /* Full width input fields */
+  padding: 10px; /* Padding inside input fields */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 4px; /* Rounded corners */
+  margin-bottom: 15px; /* Space below each input */
+  font-size: 16px; /* Font size for input text */
+  box-sizing: border-box; /* Include padding and border in total width */
+}
+
+/* Textarea specific styling */
+.postjob-form textarea {
+  resize: vertical; /* Allow vertical resizing only */
+}
+
+/* Style for the submit button */
+.postjob-form button {
+  background-color: #007bff; /* Primary blue color */
+  color: white; /* White text color */
+  border: none; /* No border */
+  border-radius: 4px; /* Rounded corners */
+  padding: 10px 15px; /* Padding inside the button */
+  font-size: 16px; /* Font size for button text */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+/* Hover effect for the submit button */
+.postjob-form button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 600px) {
+  .postjob-form {
+      padding: 15px; /* Reduce padding on smaller screens */
+  }
+
+  .postjob-form h2 {
+      font-size: 20px; /* Smaller font size for headings */
+  }
+
+  .postjob-form button {
+      width: 100%; /* Full width button */
+  }
+}

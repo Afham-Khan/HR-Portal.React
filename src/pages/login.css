@@ -1,0 +1,137 @@
+/* Container for form */
+.log {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 5vw 0; */
+
+
+}
+
+/* Heading styles */
+h1 {
+    text-align: center;
+    margin-top: 10vw;
+    color: rgb(0, 0, 0);  
+    font-size: 2.5vw; /* Font size is now responsive */
+    font-family: 'Arial', sans-serif; /* More modern font */
+}
+
+/* Form styling */
+.log form {
+    border: 0.2vw solid black;
+    width: 80%; /* Use percentage for responsiveness */
+    max-width: 500px; /* Set a maximum width for large screens */
+    text-align: center;
+    font-weight: bold;
+    padding: 2vw; /* Increased padding for a better feel */
+    color: black;
+    margin-top: 1.5vw;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly less transparent */
+    border-radius: 20px; /* Smoother border radius */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increased shadow for depth */
+    transition: transform 0.3s; /* Subtle hover effect */
+}
+
+.log form:hover {
+    transform: scale(1.02); /* Slightly scale on hover */
+}
+
+/* Input field styling */
+input {
+    border: none;
+    border-radius: 4px;
+    border-bottom: 2px solid black; /* Thicker border for better visibility */
+    padding: 1.2vw; /* Increased padding */
+    width: 90%;
+    max-width: 400px;
+    margin: 1.5vw 0; /* Spacing between inputs */
+    font-size: 1.2vw; /* Responsive font size */
+    transition: border-bottom 0.3s; /* Smooth border color change */
+}
+
+input:focus {
+    outline: none; /* Remove default outline */
+    border-bottom: 2px solid dodgerblue; /* Change border color on focus */
+}
+
+/* Login button styling */
+.logbtn {
+    border: none; 
+    background-color: dodgerblue; 
+    color: white;
+    width: 100%; /* Full width for better responsiveness */
+    height: 50px; /* Increased height for better touch targets */
+    cursor: pointer;
+    border-radius: 8px; /* Smoothed border */
+    font-size: 1.2vw;
+    padding: 0.8vw; /* Adjusted padding */
+    margin-top: 2vw;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.logbtn:hover {
+    background-color: var(--accent-color);
+    color: black;
+}
+
+/* Create account button styling */
+.create {
+    display: inline-block;
+    border: 2px solid; 
+    background-color: var(--accent-color);
+    color: white; /* Change text color for better contrast */
+    cursor: pointer;
+    border-radius: 8px; /* More consistent border-radius */
+    font-size: 1.2vw; 
+    padding: 0.8vw 2vw; /* Better padding */
+    margin-top: 1.5vw;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+.create:hover {
+    
+    color: black;
+    border: 2px solid black;
+}
+
+/* Make the layout more responsive on smaller devices */
+@media (max-width: 768px) {
+    .log form {
+        width: 90%;
+        padding: 4vw;
+    }
+
+    h1 {
+        font-size: 5vw; /* Larger font size on small screens */
+    }
+
+    input {
+        font-size: 3vw; /* Responsive input text size */
+    }
+
+    .logbtn, .create {
+        font-size: 3vw; /* Button font size adapts */
+    }
+}
+
+@media (max-width: 480px) {
+    .log form {
+        width: 100%;
+        padding: 5vw;
+    }
+
+    h1 {
+        font-size: 6vw; /* Larger font size for very small screens */
+    }
+
+    input {
+        font-size: 4vw; /* Further increase input size for readability */
+    }
+
+    .logbtn, .create {
+        font-size: 4vw;
+        padding: 3vw; /* Increase padding for easier touch targets */
+    }
+}

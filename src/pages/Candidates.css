@@ -1,0 +1,270 @@
+/* Candidates.css */
+
+.candidates {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.candidates-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.candidates-title {
+  margin: 0;
+  font-size: 2em;
+  color: black;
+  
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+}
+
+.button,
+.action-button,
+.delete-button,
+.choose-file-button {
+  flex: 1; 
+  min-width: 120px;
+  height: 34px;
+  padding: 6px 8px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  font-size: 0.85em;
+  text-align: center;
+  margin-right: 20px;
+  margin-bottom: 15px;
+}
+.button{
+  margin-bottom: 15px;
+}
+
+.button:hover,
+.action-button:hover,
+.choose-file-button:hover {
+  background-color: green;
+  transform: scale(1.05);
+}
+
+.delete-button.delete-button:hover {
+  background-color: red;
+}
+
+.search-input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.candidates-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+
+.candidates-table th,
+.candidates-table td {
+  padding: 8px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.candidates-table th {
+  background-color: #0072FF;
+  color: #fff;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.candidates-table th:hover {
+  background-color: #2F8A0D;
+}
+
+.candidates-table td.name {
+  text-align: center;
+}
+
+.sortable {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  justify-content: center;
+}
+
+.profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.pagination {
+  text-align: center;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 8px 12px;
+  border: none;
+  background-color: #ddd;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  min-width: 40px;
+  height: 40px;
+}
+
+.pagination button.active {
+  background-color: #0072FF;
+  color: #fff;
+}
+
+.pagination button:hover {
+  background-color: #ccc;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 10px;
+  width: 75%;
+  margin-top: 100px;
+  margin-bottom: 10px;
+  max-width: 550px;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  animation: slideIn 0.3s ease-in-out;
+}
+
+.cv-content {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-actions button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-left: 5px;
+}
+
+.modal-actions .close-button:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+.modal-content form input,
+.modal-content form select {
+  width: 100%;
+  padding: 2px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  margin-right: 5px;
+}
+
+
+/* Search Container Styles */
+.search-container {
+  position: relative;
+  width: 270px; /* Adjust width as needed */
+}
+
+.search-icon {
+  position: relative;
+  left: 2px;
+  top: 40%;
+  transform: translateY(-50%);
+  color: #aaa;
+  pointer-events: none; /* Allows clicks to pass through to the input */
+  font-size: 1em; /* Adjust icon size as needed */
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .candidates-header {
+    flex-direction: column;
+  }
+
+  .candidates-title {
+    font-size: 1.5em;
+  }
+
+  .header-actions {
+    margin-top: 10px;
+    justify-content: center;
+  }
+
+  .button,
+  .action-button,
+  .delete-button,
+  .choose-file-button {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .modal-content {
+    width: 90%;
+    max-width: 320px;
+  }
+
+  .candidates-table th,
+  .candidates-table td {
+    padding: 6px;
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .candidates-title {
+    font-size: 1.2em;
+  }
+
+  .button,
+  .action-button,
+  .delete-button,
+  .choose-file-button {
+    font-size: 0.8em;
+    padding: 8px;
+  }
+
+  .modal-content {
+    width: 95%;
+    max-width: 280px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .modal-content {
+    max-width: 500px;
+  }
+}

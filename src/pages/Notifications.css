@@ -1,0 +1,50 @@
+.notifications-page {
+    padding: 20px;
+  }
+  
+  .notifications-page h1 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 2rem;
+    color: #0072ff;
+  }
+  
+  .notifications-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .notification-item {
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .notification-item.job {
+    border-left: 5px solid #4caf50;
+  }
+  
+  .notification-item.application {
+    border-left: 5px solid #2196f3;
+  }
+  
+  .notification-item.login {
+    border-left: 5px solid #ffc107;
+  }
+  
+  .notification-item.event {
+    border-left: 5px solid #9c27b0;
+  }
+  
+  .notification-item.attendance {
+    border-left: 5px solid #f44336;
+  }
+  
+  .notification-date {
+    font-size: 0.85rem;
+    color: #777;
+  }
+  

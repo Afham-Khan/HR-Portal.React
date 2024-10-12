@@ -1,0 +1,1167 @@
+/* Dashboard.css */
+/* CSS Variables for consistency */
+:root {
+  --primary-color: #0072ff;
+  --secondary-color: #f5f5f5;
+  --text-color: #000000;
+  --accent-color: #28a745;
+  --danger-color: #dc3545;
+  --gray-color: #6c757d;
+  --bg-color: #343a40;
+}
+
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--text-color);
+}
+
+.hr-portal {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 250px;
+  background-color: var(--primary-color);
+  padding: 20px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.sidebar__title {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--text-color);
+  margin-bottom: 20px; 
+}
+
+.sidebar__nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar__button {
+  margin-bottom: 10px;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  font-weight: 500; 
+}
+
+.sidebar__icon {
+  margin-right: 10px;
+}
+
+.sidebar__button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+  padding: 15px 25px;
+  color: var(--secondary-color);
+  position: fixed;
+  max-width: 100%;
+  width: calc(100% - 250px);
+  top: 0;
+  z-index: 1000;
+  border-radius: 200px;
+  overflow: hidden;
+  gap: 50px;
+}
+
+.header__menu-button {
+  font-size: 34px;
+  background: var(--accent-color);
+  border: none;
+  color: var(--secondary-color);
+  cursor: pointer;
+  border-radius: 10px;
+  position: relative;
+  right: 90px;
+}
+
+.notifications, .user-profile {
+  color: var(--secondary-color);
+  height: 40px;
+  width: 100%;
+  font-size: xx-large;
+  background-color: var(--accent-color);
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0px;
+}
+
+.header__search {
+  display: flex;
+  align-items: center;
+}
+
+.header__search input {
+  margin-left: 10px;
+  border-radius: 5px;
+  width: 400px;
+  padding: 16px 20px;
+  border: 1px solid var(--gray-color);
+  transition: border-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.search-button {
+  display: flex;
+  justify-content: center;
+  height: 40px;
+  align-items: center;
+  margin-left: 10px;
+  background-color: var(--accent-color);
+  border: none;
+  border-radius: 10px;
+  width: 60px;
+}
+
+.header__search-icon {
+  display: none;
+}
+
+.header__search-input:focus {
+  border-color: var(--primary-color);
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+}
+
+.header__action-button {
+  margin-left: 10px;
+  background-color: transparent;
+  color: var(--secondary-color);
+  border: none;
+  cursor: pointer;
+}
+
+.header__action-button:hover {
+  color: #ffeb3b; 
+}
+
+/* Main Content Styles */
+.main-content {
+  background-color: var(--secondary-color);
+  margin-left: 120px;
+  padding: 20px;
+  flex-grow: 1;
+
+}
+
+.content {
+  margin-top: 4%;
+  margin-left: 3%;
+  height: 100vh;
+  width: 100%;
+}
+
+/* Dashboard Styles */
+.dashboard__title {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.dashboard__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.dashboard__card {
+  background-color: var(--secondary-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: cardEntrance 0.5s ease forwards;
+}
+
+.dashboard__card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard__card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.dashboard__card-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.dashboard__card-value {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.dashboard__card-subtext {
+  font-size: 12px;
+  color: var(--gray-color);
+}
+
+.dashboard__card-icon {
+  color: var(--primary-color);
+}
+
+/* Additional Content Area */
+.dashboard__additional-content {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Attendance Stats */
+.attendance__stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.attendance__stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.attendance__value {
+  font-weight: bold;
+}
+
+.attendance__value--present {
+  color: var(--accent-color);
+}
+
+.attendance__value--late,
+.attendance__value--absent {
+  color: var(--danger-color);
+}
+
+/* Events List */
+.events__list {
+  list-style: none;
+  padding: 0;
+}
+
+.events__item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.events__item .events__icon {
+  margin-right: 10px;
+  color: var(--accent-color);
+}
+
+/* Employee Styles */
+.employee__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+  padding: 10px;
+  background-color: var(--secondary-color);
+  box-sizing: border-box;
+}
+
+.employee__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: contents;
+}
+
+.employee__item {
+  background-color: var(--secondary-color);
+  border: 1px solid #0072ff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 14px 18px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #000000;
+  box-sizing: border-box;
+  font-size: 40px;
+  font-weight: 900;
+  font-family: 'Lucida Sans', 'Lucida Grande', Geneva, Verdana, sans-serif;
+  height: auto;
+  min-height: 250px;
+}
+
+.employee__item:hover {
+  transform: scale(1.05);
+}
+
+.employee__avatar img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: none;
+}
+
+.employee__achievement h3 {
+  font-size: 20px;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 5px;
+  color: var(--primary-color);
+}
+
+.employee__achievement p {
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.employee__details {
+  width: 100%;
+  text-align: left;
+  color: var(--accent-color);
+}
+
+.employee__details p {
+  margin: 5px 0;
+  font-size: 18px;
+  margin: 10px 0;
+  color: var(--text-color);
+}
+
+.employee__details p strong {
+  font-weight: 800;
+  color: var(--primary-color);
+}
+
+/* Department Overview */
+.dashboard__department-overview {
+  padding: 40px 0px;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ECF0F1;
+}
+
+.dashboard__department-overview .card-header {
+  background-color: #0072ff;
+  color: #ffffff;
+  padding: 25px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.department-overview__chart {
+  padding: 20px;
+  height: 400px;
+}
+
+.chartjs-render-monitor {
+  max-height: 100%;
+}
+
+/* Additional Dashboard Styles */
+.dashboard__attendance, .dashboard__events {
+  background-color: #2C2F36;
+  border-radius: 12px;
+  padding: 20px;
+  width: 88%;
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard__attendance h3,
+.dashboard__events h3 {
+  color: #ffffff;
+}
+
+.CardTitle {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.attendance__circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 8px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+  position: relative;
+  margin: 20px;
+}
+
+.attendance__circle--present {
+  border-color: #28a745;
+  color: #28a745;
+}
+
+.attendance__circle--late {
+  border-color: #ffc107;
+  color: #ffc107;
+}
+
+.attendance__circle--absent {
+  border-color: #dc3545;
+  color: #dc3545;
+}
+
+.attendance__circle::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 8px solid rgba(255, 255, 255, 0.1);
+}
+
+.dashboard__events .events__list {
+  list-style: none;
+  padding: 0;
+}
+
+.events__item {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.events__item:last-child {
+  border-bottom: none;
+}
+
+.events__icon {
+  margin-right: 12px;
+  color: #007bff;
+}
+
+.events__item span {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+/* Animations */
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .dashboard__cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1030px) {
+  .header__menu-button {
+    right: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .main-content {
+    margin-left: 0;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .header__menu-button {
+    display: inline-block;
+  }
+
+  .header {
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 992px) {
+  .employee__item {
+    font-size: 30px;
+    min-height: 220px;
+  }
+
+  .employee__avatar img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard__additional-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .dashboard__attendance, .dashboard__events, .employee__item {
+    width: 100%;
+  }
+
+  .attendance__stat {
+    font-size: 14px;
+  }
+
+  .attendance__circle {
+    width: 60px;
+    height: 60px;
+    font-size: 12px;
+  }
+
+  .CardTitle {
+    font-size: 18px;
+  }
+
+  .dashboard__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .employee__item {
+    width: 45%;
+    font-size: 32px;
+    padding: 15px;
+  }
+
+  .employee__avatar img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .employee__achievement h3 {
+    
+    font-size: 18px;
+  }
+
+  .employee__achievement p {
+    font-size: 14px;
+  }
+
+  .employee__details p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .CardTitle {
+    font-size: 16px;
+  }
+
+  .attendance__stat {
+    font-size: 12px;
+  }
+
+  .attendance__circle {
+    width: 50px;
+    height: 50px;
+    font-size: 10px;
+  }
+
+  .dashboard__additional-content {
+    gap: 15px;
+  }
+
+  .employee__item {
+    width: 100%;
+    font-size: 28px;
+    padding: 10px;
+  }
+
+  .employee__avatar img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .employee__achievement h3 {
+    font-size: 16px;
+  }
+
+  .employee__achievement p {
+    font-size: 12px;
+  }
+
+  .employee__details p {
+    font-size: 14px;
+  }
+}
+
+/* Accessibility Improvements */
+.sidebar__button:focus,
+.header__action-button:focus,
+.search-button:focus {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
+/* Performance Optimization */
+@media (prefers-reduced-motion: reduce) {
+  .sidebar,
+  .employee__item,
+  .dashboard__card {
+    transition: none;
+  }
+}/* Existing CSS remains unchanged */
+
+/* Mobile-specific styles */
+@media (max-width: 500px) {
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px;
+    border-radius: 0;
+    position: static;
+    width: 100%;
+  }
+
+  .header__menu-button {
+    position: static;
+    margin-bottom: 10px;
+  }
+
+  .header__search {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .header__search input {
+    width: calc(100% - 70px);
+    margin-left: 0;
+  }
+
+  .notifications, .user-profile {
+    width: auto;
+    margin: 10px 0;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  .dashboard__title {
+    font-size: 24px;
+  }
+
+  .dashboard__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard__card {
+    padding: 15px;
+  }
+
+  .dashboard__card-title {
+    font-size: 16px;
+  }
+
+  .dashboard__card-value {
+    font-size: 20px;
+  }
+
+  .dashboard__additional-content {
+    flex-direction: column;
+  }
+
+  .dashboard__attendance, .dashboard__events {
+    width: 100%;
+  }
+
+  .attendance__circle {
+    width: 60px;
+    height: 60px;
+    font-size: 12px;
+    margin: 10px;
+  }
+
+  .employee__container {
+    grid-template-columns: 1fr;
+  }
+
+  .employee__item {
+    font-size: 18px;
+    padding: 15px;
+    min-height: auto;
+  }
+
+  .employee__avatar img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .employee__achievement h3 {
+    font-size: 16px;
+  }
+
+  .employee__achievement p {
+    font-size: 14px;
+  }
+
+  .employee__details p {
+    font-size: 14px;
+  }
+}
+
+/* iPhone 6 specific styles (375px) */
+@media (max-width: 375px) {
+  .header__search input {
+    width: calc(100% - 60px);
+    padding: 12px 15px;
+  }
+
+  .search-button {
+    width: 50px;
+  }
+
+  .dashboard__card {
+    padding: 12px;
+  }
+
+  .attendance__circle {
+    width: 50px;
+    height: 50px;
+    font-size: 10px;
+  }
+
+  .employee__item {
+    font-size: 16px;
+  }
+}
+
+/* Samsung Galaxy Note 8 specific styles (414px) */
+@media (min-width: 376px) and (max-width: 414px) {
+  .header__search input {
+    width: calc(100% - 65px);
+  }
+
+  .search-button {
+    width: 55px;
+  }
+
+  .dashboard__card {
+    padding: 14px;
+  }
+
+  .attendance__circle {
+    width: 55px;
+    height: 55px;
+    font-size: 11px;
+  }
+
+  .employee__item {
+    font-size: 17px;
+  }
+}
+
+/* Ensure sidebar is hidden by default on mobile */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    width: 100%;
+    z-index: 1001;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+}
+
+/* Improve touch targets for mobile */
+@media (max-width: 500px) {
+  .sidebar__button,
+  .header__action-button,
+  .search-button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .events__item,
+  .performance__item {
+    padding: 12px 0;
+  }
+}/* Existing CSS remains unchanged */
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  /* Header and Navigation */
+  .header {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 0;
+    position: fixed;
+    width: 100%;
+    height: 60px;
+  }
+
+  .header__menu-button {
+    font-size: 24px;
+    position: static;
+    margin: 0;
+    padding: 5px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header__search {
+    flex: 1;
+    margin: 0 10px;
+  }
+
+  .header__search input {
+    width: 100%;
+    max-width: none;
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .search-button {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .notifications, .user-profile {
+    width: 40px;
+    height: 40px;
+    font-size: large;
+    margin: 0 5px;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* Main Content */
+  .main-content {
+    margin-left: 0;
+    margin-top: 60px;
+    padding: 15px;
+  }
+
+  /* Dashboard Cards */
+  .dashboard__cards {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .dashboard__card {
+    padding: 15px;
+  }
+
+  /* Chart */
+  .department-overview__chart {
+    height: 300px;
+  }
+
+  /* Employee Items */
+  .employee__container {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+  }
+
+  .employee__item {
+    padding: 15px;
+    min-height: 200px;
+    font-size: 16px;
+  }
+
+  .employee__avatar img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .employee__achievement h3 {
+    font-size: 16px;
+  }
+
+  .employee__achievement p {
+    font-size: 14px;
+  }
+
+  .employee__details p {
+    font-size: 14px;
+  }
+
+  /* Attendance and Events */
+  .dashboard__attendance, .dashboard__events {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .attendance__circle {
+    width: 60px;
+    height: 60px;
+    font-size: 12px;
+    margin: 10px;
+  }
+
+  .CardTitle {
+    font-size: 18px;
+  }
+}
+
+/* Further adjustments for smaller screens */
+@media (max-width: 480px) {
+  .header__search input {
+    max-width: 150px;
+  }
+
+  .employee__container {
+    grid-template-columns: 1fr;
+  }
+
+  .employee__item {
+    min-height: 180px;
+  }
+
+  .attendance__circle {
+    width: 50px;
+    height: 50px;
+    font-size: 10px;
+  }
+}
+
+/* Ensure sidebar is hidden by default on mobile */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    z-index: 1001;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  body.sidebar-open {
+    overflow: hidden;
+  }
+
+  .sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+
+  body.sidebar-open .sidebar-overlay {
+    display: block;
+  }
+}
+
+/* Improve touch targets for mobile */
+@media (max-width: 768px) {
+  .sidebar__button,
+  .header__action-button,
+  .search-button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .events__item,
+  .performance__item {
+    padding: 12px 0;
+  }
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.sidebar.open {
+  animation: slideIn 0.3s ease-out;
+}
+
+.sidebar-overlay {
+  animation: fadeIn 0.3s ease-out;
+}
+@media (max-width: 992px) {
+  .dashboard__cards {
+    grid-template-columns: 1fr; /* Stacks cards vertically */
+  }
+
+  .header__search input {
+    width: 250px; /* Reduces search bar width on smaller screens */
+  }
+
+  .header__menu-button {
+    font-size: 28px; /* Smaller button size for mobile */
+  }
+
+  .notifications, .user-profile {
+    font-size: large; /* Adjust font size for smaller screens */
+    margin: 10px 0; /* Reduce margin */
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px; /* Adjust sidebar width for tablets */
+  }
+
+  .header {
+    padding: 10px 15px; /* Adjust padding for the header */
+  }
+
+  .header__search input {
+    width: 180px; /* Further reduce search bar width */
+  }
+
+  .dashboard__card {
+    padding: 15px; /* Reduce padding in cards */
+  }
+
+  .attendance__circle {
+    width: 70px; /* Reduce size of attendance circles */
+    height: 70px;
+    font-size: 12px; /* Smaller font size for circles */
+  }
+
+  .attendance__value,
+  .attendance__value--present,
+  .attendance__value--late,
+  .attendance__value--absent {
+    font-size: 14px; /* Adjust font size for attendance values */
+  }
+}
+
+@media (max-width: 576px) {
+  .sidebar {
+    display: none; /* Hide sidebar on mobile devices by default */
+  }
+
+  .header__menu-button {
+    display: block; /* Ensure menu button is visible */
+  }
+
+  .header {
+    padding: 5px 10px; /* Minimized padding */
+  }
+
+  .header__search input {
+    width: 150px; /* Further minimize search input */
+  }
+
+  .employee__item {
+    font-size: 30px; /* Reduce font size for employee items */
+    padding: 10px; /* Minimized padding */
+  }
+
+  .employee__details p {
+    font-size: 16px; /* Adjust font size for details */
+  }
+}
+.notifications.has-notifications {
+  background-color: red;
+  color: white;
+}
+
+.notification-badge {
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+}
+
+.notifications-page {
+  padding: 20px;
+}
+
+.notifications-page h2 {
+  margin-bottom: 20px;
+}
+
+.notifications-page ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.notifications-page li {
+  background-color: #f0f0f0;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}

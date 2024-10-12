@@ -1,0 +1,125 @@
+@media (max-width: 600px) {
+    .container {
+      padding: 10px;
+    }
+    .header {
+      font-size: 24px;
+    }
+    .input,
+    .select,
+    .button {
+      width: 100%;
+      max-width: 100%;
+    }
+    .goalItem {
+      padding: 10px;
+    }
+    .progressContainer {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .rangeInput {
+      width: 100%;
+    }
+  }
+ 
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .container {
+      padding: 15px;
+      max-width: 100%;
+    }
+  
+    .header {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+  
+    .controls {
+      flex-direction: column; /* Stack controls vertically */
+    }
+  
+    .input, .select, .button {
+      width: 100%; /* Full width for inputs and buttons */
+      margin: 5px 0; /* Add margin for spacing */
+    }
+  
+    .input {
+      padding: 12px; /* Slightly larger padding */
+    }
+  
+    .subHeader {
+      font-size: 20px; /* Smaller subheader size */
+    }
+  
+    .averageRating {
+      font-size: 1.5rem; /* Smaller average rating font */
+    }
+  
+    .reviewList {
+      padding: 0; /* Reset padding for the review list */
+    }
+  
+    .reviewItem {
+      padding: 12px; /* Adjust padding for review items */
+    }
+  
+    .reviewItemHeader {
+      font-size: 1.2rem; /* Smaller header size */
+    }
+  
+    .reviewRating {
+      font-size: 1rem; /* Smaller rating font size */
+    }
+  
+    .reviewFeedback {
+      font-size: 0.9rem; /* Smaller feedback font */
+    }
+  
+    .reviewDate {
+      font-size: 0.8rem; /* Smaller date font */
+    }
+  
+    .actionButton {
+      padding: 8px 12px; /* Larger button padding for easier clicking */
+      width: 48%; /* Set width for better layout */
+      margin-bottom: 10px; /* Add spacing below action buttons */
+    }
+  }
+  
+  /* Additional Small Screen Adjustments */
+  @media (max-width: 480px) {
+    .header {
+      font-size: 20px; /* Even smaller header for very small screens */
+    }
+  
+    .controls {
+      margin-bottom: 15px; /* Space below controls */
+    }
+  
+    .input, .select, .button {
+      padding: 10px; /* Smaller padding for very small screens */
+      font-size: 14px; /* Adjust font size for smaller screens */
+    }
+  
+    .reviewItem {
+      padding: 10px; /* Further adjust padding for review items */
+    }
+  
+    .reviewItemHeader {
+      font-size: 1.1rem; /* Smaller header for review items */
+    }
+  
+    .reviewRating, .reviewFeedback, .reviewDate {
+      font-size: 0.8rem; /* Smaller text for reviews */
+    }
+  
+    .averageRating {
+      font-size: 1.1rem; /* Smaller average rating font */
+    }
+  
+    .actionButton {
+      width: 100%; /* Full width buttons for very small screens */
+    }
+  }
+    

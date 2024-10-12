@@ -1,0 +1,133 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 250px; /* Fixed width for larger screens */
+  background-color: #0072FF;
+  color: white;
+  transition: transform 0.3s ease-in-out;
+  
+}
+
+.sidebar-open {
+  transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+      position: fixed; /* Fix position for mobile */
+      top: 0;
+      left: 0;
+      height: 100%;
+      transform: translateX(-100%); /* Hide off-screen */
+      z-index: 1000;
+  }
+  .sidebar-open {
+      transform: translateX(0); /* Show sidebar on open */
+  }
+}
+
+/* Sidebar Header */
+.sidebar-header {
+  padding: 20px;
+  background-color: #34495e;
+}
+
+.sidebar-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Navigation Styles */
+.sidebar-nav {
+  padding: 20px 0;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  color: #ecf0f1;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.nav-item:hover {
+  background-color: #34495e;
+}
+
+.nav-item-active {
+  background-color: #3498db;
+}
+
+.nav-icon {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+/* Main Content Styles */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top Navigation Styles */
+.top-nav-left, .top-nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.top-nav-right {
+  width: 100px; /* Fixed width for right nav */
+  justify-content: space-between;
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-right: 15px;
+  display: none; /* Hide by default */
+}
+
+/* Responsive adjustments for menu button */
+@media (max-width: 768px) {
+  .menu-button {
+      display: block; /* Show menu button on mobile */
+  }
+}
+
+/* Search Input */
+.search-input {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Navigation Button */
+.nav-button {
+  background: white;
+  border: none;
+  cursor: pointer;
+  margin-left: 15px;
+  color: #000000;
+}
+
+/* Page Content */
+.page-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #ecf0f1;
+}
+
+/* Responsive Adjustments for Page Content */
+@media (max-width: 768px) {
+  .page-content {
+      padding: 10px; /* Reduce padding on mobile */
+  }
+}
